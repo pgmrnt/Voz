@@ -1,0 +1,28 @@
+<!DOCTYPEhtml>
+  <html>
+  <cabeça>
+    <title>Voz de Comando Simples</title>
+    </head>
+    <corpo>
+      <p id="saída"></p>
+      <button id="start">Clique e diga algo!</button>
+      <roteiro>
+        (() => {
+        const startBtn = document.querySelector('#start');
+        saída const = document.querySelector('#output');
+        função início() {
+        reconhecimento const = novo webkitSpeechRecognition();
+        reconhecimento.interimResults = true;
+        reconhecimento.lang = "pt-BR";
+        reconhecimento.contínuo = verdadeiro;
+        reconhecimento.start();
+        //Este evento acontece quando você fala no microfone
+        reconhecimento.onresult=função(evento){
+        for (deixe i = event.resultIndex; i < event.results.length; i++) { if (event.resultados[i].isFinal) { // Aqui
+          você pode pegar a string do que você contou const conteúdo=event.results[i][0].transcript.trim();
+          saída.textContent=conteúdo; } } }; }; startBtn.addEventListener('clique', ()=> start());
+          })();
+          </script>
+          </body>
+
+  </html>
